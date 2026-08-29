@@ -1,0 +1,6 @@
+[
+{"document_id":"LAW-001","title":"Patents Act","authority":"Government of India / IP India","section":"Section 3(p)","text":"Curated prototype source metadata. Replace/augment with verified official legal text before production.","source_url":"https://ipindia.gov.in/","last_verified":"2026-08-29","status":"prototype-curated"},
+{"document_id":"LAW-002","title":"Trade Marks Act","authority":"Government of India / IP India","section":"Trademark framework","text":"Curated prototype source metadata. Verify current official provisions before relying on them.","source_url":"https://ipindia.gov.in/","last_verified":"2026-08-29","status":"prototype-curated"},
+{"document_id":"LAW-003","title":"Biological Diversity framework","authority":"Government of India","section":"ABS framework","text":"Curated prototype source metadata. Verify current official provisions and authority guidance.","source_url":"https://moef.gov.in/","last_verified":"2026-08-29","status":"prototype-curated"},
+{"document_id":"LAW-004","title":"Ayurveda Aahara regulations","authority":"Government of India","section":"Food/wellness framework","text":"Curated prototype source metadata. Verify current official regulations before commercialization.","source_url":"https://fssai.gov.in/","last_verified":"2026-08-29","status":"prototype-curated"}
+]
