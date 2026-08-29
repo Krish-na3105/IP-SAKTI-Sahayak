@@ -1,29 +1,23 @@
 # IP-SAKTI Sahayak
 
-AI-Powered Ayurvedic IP & Compliance Navigator — SIH 2026 V1 prototype.
+AI-Powered Ayurvedic IP & Compliance Navigator
 
 ## Quick start
 
 ### Backend
-```bash
 cd backend
 python -m venv .venv
-# Windows: .venv\\Scripts\\activate
-# macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
-```
+
 
 ### Frontend
-```bash
 cd frontend
 npm install
 npm run dev
-```
 
 Open http://localhost:3000.
 
-Set `NEXT_PUBLIC_API_URL=http://localhost:8000` if needed.
 
 Optional LLM support: set `OPENAI_API_KEY` and `OPENAI_MODEL` in `backend/.env`. The prototype remains functional without an API key using deterministic demo reasoning.
 
