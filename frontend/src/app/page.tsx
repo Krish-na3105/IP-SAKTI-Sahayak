@@ -1,2 +1,126 @@
-import Link from 'next/link'; import {ShieldCheck,Search,IndianRupee,FlaskConical,Leaf,ArrowRight} from 'lucide-react';
-export default function Home(){return <><main className="container"><section className="hero"><div><div className="eyebrow">AI-Powered Ayurvedic IP & Compliance Navigator</div><h1>Protect Your Ayurvedic Innovation. Understand Your Compliance.</h1><p>An AI-assisted platform that helps Ayurveda innovators understand product classification, IP protection, traditional-knowledge considerations, biodiversity/ABS requirements and official filing costs.</p><div className="heroActions"><Link className="btn primary" href="/assessment">Start Product Assessment <ArrowRight size={16}/></Link><a className="btn secondary" href="#how">See How It Works</a></div></div><div className="heroPanel"><div className="eyebrow" style={{color:'#b9d6c4'}}>Innovation Health Check</div><div className="score">72<span style={{fontSize:22}}>/100</span></div><p style={{color:'#c6d2db'}}>A single preliminary view across regulatory clarity, IP readiness, prior-art, TK, ABS and trademark opportunity.</p><div className="miniGrid"><div className="mini">🛡️ IP Readiness</div><div className="mini">🔍 Prior Art</div><div className="mini">🌱 ABS Review</div><div className="mini">📜 TK Risk</div></div></div></section><section className="section"><div className="sectionTitle"><div><div className="eyebrow">Core capabilities</div><h2>One pathway from idea to action</h2></div></div><div className="grid3">{[[FlaskConical,'Product Classification','Understand the likely regulatory category.'],[ShieldCheck,'IP Protection','Explore patent, trademark, design, copyright, GI and trade-secret considerations.'],[Search,'Prior-Art Check','Find potentially relevant existing demonstration records.'],[IndianRupee,'Cost Estimator','Estimate government filing fees from structured fee data.'],[Leaf,'ABS & TK Review','Surface preliminary traditional-knowledge and biodiversity considerations.'],[ShieldCheck,'Source-backed AI','Keep facts, AI interpretation and uncertainty distinct.']].map(([I,t,d]:any)=><div className="card" key={t}><div className="iconBox"><I size={20}/></div><h3>{t}</h3><p className="muted">{d}</p></div>)}</div></section><section className="section" id="how"><div className="card"><div className="eyebrow">How it works</div><h2>PRODUCT → CLASSIFY → CHECK → PROTECT → ESTIMATE → ACT</h2><div className="grid3" style={{marginTop:22}}>{['Tell us about your product','Analyze rules and records','Understand your position','Get recommended next steps','Estimate government cost','Generate assessment report'].map((x,i)=><div key={x}><b>0{i+1}</b><p className="muted">{x}</p></div>)}</div></div></section></main></>}
+import Link from 'next/link';
+import {
+  ShieldCheck,
+  Search,
+  IndianRupee,
+  FlaskConical,
+  Leaf,
+  ArrowRight
+} from 'lucide-react';
+
+export default function Home() {
+  return (
+    <>
+      <main className="container">
+
+        {/* HERO SECTION */}
+        <section className="hero">
+          
+          {/* LEFT SIDE */}
+          <div>
+            <div className="eyebrow">
+              AI-Powered Ayurvedic IP & Compliance Navigator
+            </div>
+
+           <h1 className="hero-title">
+  Safeguard Your Ayurvedic Innovation. Stay Compliant.
+</h1>
+
+<p className="hero-sub">
+  AI guidance for IP protection, compliance, TK & ABS insights, and filing costs.
+</p>
+
+            <div className="heroActions">
+              <Link className="btn primary" href="/assessment">
+                Start Product Assessment <ArrowRight size={16} />
+              </Link>
+
+              <a className="btn secondary" href="#how">
+                See How It Works
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE PANEL */}
+          <div className="heroPanel">
+            <div className="eyebrow" style={{ color: '#b9d6c4' }}>
+              Innovation Health Check
+            </div>
+
+            <div className="score">
+              72<span style={{ fontSize: 22 }}>/100</span>
+            </div>
+
+            <p style={{ color: '#c6d2db' }}>
+              A single preliminary view across regulatory clarity, IP readiness, prior-art, TK, ABS and trademark opportunity.
+            </p>
+
+            <div className="miniGrid">
+            <div className="mini ip">🛡️ IP Readiness</div>
+            <div className="mini prior">🔍 Prior Art</div>
+            <div className="mini abs">🌱 ABS Review</div>
+            <div className="mini tk">📜 TK Risk</div>
+            </div>
+            </div>
+        </section>
+
+        {/* CORE CAPABILITIES */}
+        <section className="section">
+          <div className="sectionTitle">
+            <div>
+              <div className="eyebrow">Core capabilities</div>
+              <h2>One pathway from idea to action</h2>
+            </div>
+          </div>
+
+          <div className="grid3">
+            {[
+              [FlaskConical, 'Product Classification', 'Understand the likely regulatory category.'],
+              [ShieldCheck, 'IP Protection', 'Explore patent, trademark, design, copyright, GI and trade-secret considerations.'],
+              [Search, 'Prior-Art Check', 'Find potentially relevant existing demonstration records.'],
+              [IndianRupee, 'Cost Estimator', 'Estimate government filing fees from structured fee data.'],
+              [Leaf, 'ABS & TK Review', 'Surface preliminary traditional-knowledge and biodiversity considerations.'],
+              [ShieldCheck, 'Source-backed AI', 'Keep facts, AI interpretation and uncertainty distinct.']
+            ].map(([I, t, d]: any) => (
+              <div className="card" key={t}>
+                <div className="iconBox">
+                  <I size={20} />
+                </div>
+                <h3>{t}</h3>
+                <p className="muted">{d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section className="section" id="how">
+          <div className="card">
+            <div className="eyebrow">How it works</div>
+
+            <h2>
+              PRODUCT → CLASSIFY → CHECK → PROTECT → ESTIMATE → ACT
+            </h2>
+
+            <div className="grid3" style={{ marginTop: 22 }}>
+              {[
+                'Tell us about your product',
+                'Analyze rules and records',
+                'Understand your position',
+                'Get recommended next steps',
+                'Estimate government cost',
+                'Generate assessment report'
+              ].map((x, i) => (
+                <div key={x}>
+                  <b>0{i + 1}</b>
+                  <p className="muted">{x}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </>
+  );
+}
