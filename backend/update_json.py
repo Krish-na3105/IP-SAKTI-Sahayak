@@ -1,6 +1,8 @@
-{
+import json
+
+fees_data = {
   "currency": "INR",
-  "notice": "Official IP Costs \u2014 India (2026). Physical filing attracts 10% additional fee. Patent fees may additionally depend on specification pages, claims and other proceedings.",
+  "notice": "Official IP Costs — India (2026). Physical filing attracts 10% additional fee. Patent fees may additionally depend on specification pages, claims and other proceedings.",
   "patent": {
     "application": {
       "individual_startup_small_educational": 1600,
@@ -45,3 +47,8 @@
     "tm_a_note": "per mark, per class"
   }
 }
+
+with open("data/fees.json", "w", encoding="utf-8") as f:
+    json.dump(fees_data, f, indent=2)
+
+print("fees.json updated.")

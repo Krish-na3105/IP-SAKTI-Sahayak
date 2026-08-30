@@ -48,7 +48,13 @@ class ChatIn(BaseModel):
     assessment: Optional[Dict[str, Any]] = None
 
 def load_json(name):
-    return json.loads((DATA / name).read_text(encoding="utf-8"))
+    text = (DATA / name).read_text(encoding="utf-8")
+    if name.endswith('.jsonc'):
+        # Remove single line comments (//)
+        text = re.sub(r'^\s*//.*$', '', text, flags=re.MULTILINE)
+        # Remove block comments (/* */)
+        text = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
+    return json.loads(text)
 
 def classify(a: AssessmentIn):
     score = 70
@@ -126,11 +132,11 @@ def patents(q: str = ""):
 
 @app.get("/api/tk")
 def tk(q: str = ""):
-    rows=load_json("tk.json"); terms=[x.lower() for x in re.findall(r"[a-zA-Z]+",q) if len(x)>2]
+    rows=load_json("tk.jsonc"); terms=[x.lower() for x in re.findall(r"[a-zA-Z]+",q) if len(x)>2]
     for r in rows:
-        hay=(r["formulation_name"]+" "+" ".join(r["ingredients"])+" "+r["traditional_use"]).lower(); hits=sum(t in hay for t in terms)
+        hay=(r.get("case_id","")+" "+" ".join(r.get("ingredients",[]))+" "+r.get("traditional_use","")).lower(); hits=sum(t in hay for t in terms)
         r["confidence"]=min(95,50+hits*15) if terms else 50
-    return sorted(rows,key=lambda x:x["confidence"],reverse=True)
+    return sorted(rows,key=lambda x:x.get("confidence",0),reverse=True)
 
 @app.get("/api/fees")
 def fees(): return load_json("fees.json")

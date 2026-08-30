@@ -1,0 +1,62 @@
+import json
+from datetime import date
+
+today = "2026-08-30"
+
+legal_data = [
+    {
+        "document_id": "TM-ACT-1999",
+        "title": "Trade Marks Act, 1999",
+        "authority": "Government of India / IP India",
+        "section": "Sections 2, 9, 11, 12, 13, 18, 20-23, 25, 28-29, 30-35, 47 & 57",
+        "text": "Key sections for Ayurveda trademarks: Sec 2 (Definitions), Sec 9 (Absolute grounds for refusal), Sec 11 (Relative grounds), Sec 13 (Restrictions on INPN), Sec 18 (Application), Secs 28-29 (Rights & Infringement), Sec 30-35 (Defences). No separate 'Ayurvedic Trademark Act'. Ayurvedic brands fall under general TM framework but can raise AYUSH/drug restrictions.",
+        "source_url": "https://ipindia.gov.in/trade-marks-resources-act",
+        "last_verified": today,
+        "status": "official_curated"
+    },
+    {
+        "document_id": "TM-RULES-2017",
+        "title": "Trade Marks Rules, 2017",
+        "authority": "Government of India / IP India",
+        "section": "Procedure, Forms, Fees",
+        "text": "Procedure, forms, fees, and Registry processes for registering a trademark.",
+        "source_url": "https://ipindia.gov.in/trade-marks-resources-rules",
+        "last_verified": today,
+        "status": "official_curated"
+    },
+    {
+        "document_id": "PAT-ACT-1970",
+        "title": "Patents Act, 1970",
+        "authority": "Government of India / IP India",
+        "section": "Sections 2 and 3(a)-3(p)",
+        "text": "Sec 2(1)(j): invention means new product or process involving inventive step and industrial application. Sec 3 lists non-patentable inventions, notably 3(c) mere discovery of scientific principle, 3(e) mere admixture, 3(i) treatment of humans/animals, 3(p) traditional knowledge or aggregation of known properties of traditionally known components.",
+        "source_url": "https://ipindia.gov.in/writereaddata/Portal/ev/sections-index.html",
+        "last_verified": today,
+        "status": "official_curated"
+    },
+    {
+        "document_id": "AYUSH-GUIDELINES-2025",
+        "title": "Guidelines for Examination of Ayush Related Inventions",
+        "authority": "Office of the CGPDTM (IP India)",
+        "section": "Guiding Principles 1-6",
+        "text": "Principle 1: Extracts/alkaloids inherently present in plants are not novel if use is known. Principle 2: Combinations of known ingredients are obvious (additive) unless specific ratios lead to unexpected technical synergistic effect. Principle 3: Ingredient known for disease creates presumption of obviousness for combination unless unexpected technical effect. Principle 4: Optimum/workable ranges are routine experimentation. Principle 5: Selecting one ingredient from a known multi-ingredient formulation for the same activity lacks inventive step. Principle 6: Equipment/devices for known Ayush procedures may be patentable.",
+        "source_url": "https://ipindia.gov.in/",
+        "last_verified": today,
+        "status": "official_curated"
+    },
+    {
+        "document_id": "BIO-DIV-2002",
+        "title": "Biological Diversity Act, 2002",
+        "authority": "Government of India",
+        "section": "Section 6",
+        "text": "Applicants must abide by provisions when applying for patents based on biological resources from India. Non-disclosure or wrong mention can lead to refusal, opposition, or revocation.",
+        "source_url": "https://egazette.gov.in/WriteReadData/2023/247815.pdf",
+        "last_verified": today,
+        "status": "official_curated"
+    }
+]
+
+with open("backend/data/legal.json", "w", encoding="utf-8") as f:
+    json.dump(legal_data, f, indent=2)
+
+print("legal.json updated.")
