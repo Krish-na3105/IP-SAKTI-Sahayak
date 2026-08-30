@@ -1,2 +1,5 @@
-'use client'; import {useEffect,useState} from 'react'; import {postJSON} from '../../lib/api';
+'use client'; 
+import {useEffect,useState} from 'react';
+import { postJSON } from '../../lib/api';
+
 export default function Ask(){const [q,setQ]=useState('Can I patent this?');const [r,setR]=useState<any>();const [a,setA]=useState<any>();useEffect(()=>{const x=sessionStorage.getItem('ipSaktiAssessment');if(x)setA(JSON.parse(x))},[]);const ask=async()=>setR(await postJSON('/api/ask',{question:q,assessment:a?.input}));return <main className="container page"><div className="pageHead"><div><div className="eyebrow">Assessment-aware assistant</div><h1>Ask AI</h1><p>Answers are framed as preliminary reasoning, not legal conclusions.</p></div></div><div className="card"><div className="searchRow"><input className="input" value={q} onChange={e=>setQ(e.target.value)}/><button className="btn primary" onClick={ask}>Ask</button></div>{r&&<div style={{marginTop:25}}><h2>Answer</h2><p>{r.answer}</p>{r.why.length>0&&<><h3>Why?</h3><ul>{r.why.map((x:string)=><li key={x}>{x}</li>)}</ul></>}<div className="notice">{r.disclaimer}</div></div>}</div></main>}
