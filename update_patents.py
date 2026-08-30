@@ -1,4 +1,6 @@
-[
+import json
+
+patents = [
   {
     "record_id": "416499",
     "title": "Smart Wearable device and method for estimating traditional medicine system parameters",
@@ -8,14 +10,12 @@
     "filing_date": "Unknown",
     "publication_date": "2023-01-02",
     "status": "Granted",
-    "ingredients": [
-      "Wearable sensor parameters"
-    ],
+    "ingredients": ["Wearable sensor parameters"],
     "purpose": "Estimating traditional medicine parameters",
     "technical_features": "Smart Wearable device and method",
     "classification": "A61B",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "429737",
@@ -26,15 +26,12 @@
     "filing_date": "Unknown",
     "publication_date": "2023-04-24",
     "status": "Granted",
-    "ingredients": [
-      "AI",
-      "Diagnosis data"
-    ],
+    "ingredients": ["AI", "Diagnosis data"],
     "purpose": "Medical diagnosis",
     "technical_features": "Artificial Intelligence system",
     "classification": "G16H",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "379565",
@@ -45,14 +42,12 @@
     "filing_date": "Unknown",
     "publication_date": "2021-10-21",
     "status": "Granted",
-    "ingredients": [
-      "Herbal ingredients"
-    ],
+    "ingredients": ["Herbal ingredients"],
     "purpose": "Smoking alternative",
     "technical_features": "Herbal cigarette preparation",
     "classification": "A24B",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "377408",
@@ -63,14 +58,12 @@
     "filing_date": "Unknown",
     "publication_date": "2021-09-21",
     "status": "Granted",
-    "ingredients": [
-      "Herbal extracts"
-    ],
+    "ingredients": ["Herbal extracts"],
     "purpose": "Hygiene/Medical",
     "technical_features": "Vaginal douche composition",
     "classification": "A61K",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "421133",
@@ -81,14 +74,12 @@
     "filing_date": "Unknown",
     "publication_date": "2023-02-10",
     "status": "Granted",
-    "ingredients": [
-      "Herbal ingredients"
-    ],
+    "ingredients": ["Herbal ingredients"],
     "purpose": "Incense",
     "technical_features": "Incense formulation",
     "classification": "A61L",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "436895",
@@ -99,14 +90,12 @@
     "filing_date": "Unknown",
     "publication_date": "2023-07-03",
     "status": "Granted",
-    "ingredients": [
-      "Herbal components"
-    ],
+    "ingredients": ["Herbal components"],
     "purpose": "Sanitary hygiene",
     "technical_features": "Herbal sanitary pad",
     "classification": "A61F",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "319506",
@@ -117,14 +106,12 @@
     "filing_date": "Unknown",
     "publication_date": "2019-08-30",
     "status": "Granted",
-    "ingredients": [
-      "Herbal extract"
-    ],
+    "ingredients": ["Herbal extract"],
     "purpose": "Cleaning/Hygiene",
     "technical_features": "Herbal soap composition",
     "classification": "C11D",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "282906",
@@ -135,14 +122,12 @@
     "filing_date": "Unknown",
     "publication_date": "2017-05-05",
     "status": "Granted",
-    "ingredients": [
-      "Polyherbal extracts"
-    ],
+    "ingredients": ["Polyherbal extracts"],
     "purpose": "Antimicrobial",
     "technical_features": "Antimicrobial composition",
     "classification": "A61K",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "426371",
@@ -153,14 +138,12 @@
     "filing_date": "Unknown",
     "publication_date": "2023-03-22",
     "status": "Granted",
-    "ingredients": [
-      "Synergistic herbs"
-    ],
+    "ingredients": ["Synergistic herbs"],
     "purpose": "Hair growth/alopecia",
     "technical_features": "Synergistic formulation",
     "classification": "A61K",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   },
   {
     "record_id": "AYUSH-64",
@@ -171,13 +154,16 @@
     "filing_date": "1980",
     "publication_date": "1980",
     "status": "Granted",
-    "ingredients": [
-      "35 phytoconstituents"
-    ],
+    "ingredients": ["35 phytoconstituents"],
     "purpose": "Anti-malarial, Repurposed for COVID-19",
     "technical_features": "Poly-herbal formulation",
     "classification": "A61K",
     "source_type": "official_grant",
-    "official_record": true
+    "official_record": True
   }
 ]
+
+with open("backend/data/patents.json", "w", encoding="utf-8") as f:
+    json.dump(patents, f, indent=2)
+
+print("patents.json updated.")
